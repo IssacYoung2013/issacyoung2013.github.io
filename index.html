@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 4.2.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/72X72.icon">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/48X48.icon">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/32X32.icon">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
@@ -17,18 +17,20 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"issacyoung.cn","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
+  <meta name="description" content="现代生活工作节奏越来越快，需要有时间和空间沉淀积累，将知识点规划成树，记录自己的感悟心得。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Young‘s River">
+<meta property="og:url" content="http://issacyoung.cn/index.html">
+<meta property="og:site_name" content="Young‘s River">
+<meta property="og:description" content="现代生活工作节奏越来越快，需要有时间和空间沉淀积累，将知识点规划成树，记录自己的感悟心得。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Issac Young">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/">
+<link rel="canonical" href="http://issacyoung.cn/">
 
 
 <script id="page-configurations">
@@ -40,7 +42,7 @@
   };
 </script>
 
-  <title>Hexo</title>
+  <title>Young‘s River</title>
   
 
 
@@ -80,7 +82,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
+    <div class="toggle" aria-label="切换导航栏">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -92,10 +94,11 @@
     <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">Young‘s River</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+        <p class="site-subtitle">一个正能量的程序员，喜欢码字，热爱运动，向往自由</p>
   </div>
 
   <div class="site-nav-right"></div>
@@ -107,12 +110,27 @@
   <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
   </li>
   </ul>
@@ -140,17 +158,17 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/22/%E5%A6%82%E4%BD%95%E4%B8%80%E6%AD%A5%E6%AD%A5%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://issacyoung.cn/2020/02/22/%E5%A6%82%E4%BD%95%E4%B8%80%E6%AD%A5%E6%AD%A5%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Issac Young">
+      <meta itemprop="description" content="现代生活工作节奏越来越快，需要有时间和空间沉淀积累，将知识点规划成树，记录自己的感悟心得。">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="Young‘s River">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -163,16 +181,16 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
-              <time title="Created: 2020-02-22 22:44:35" itemprop="dateCreated datePublished" datetime="2020-02-22T22:44:35+08:00">2020-02-22</time>
+              <time title="创建时间：2020-02-22 22:44:35" itemprop="dateCreated datePublished" datetime="2020-02-22T22:44:35+08:00">2020-02-22</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-23 15:41:38" itemprop="dateModified" datetime="2020-02-23T15:41:38+08:00">2020-02-23</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-23 20:04:36" itemprop="dateModified" datetime="2020-02-23T20:04:36+08:00">2020-02-23</time>
               </span>
 
           
@@ -209,7 +227,9 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
 
 <p>这时访问个人仓库路径，<strong>用户名.github.io</strong>，个人博客网站就可以在网络上访问了。</p>
-<h2 id="6-绑定域名"><a href="#6-绑定域名" class="headerlink" title="6. 绑定域名"></a>6. 绑定域名</h2><h2 id="7-发布文章"><a href="#7-发布文章" class="headerlink" title="7. 发布文章"></a>7. 发布文章</h2><h2 id="8-个性化配置"><a href="#8-个性化配置" class="headerlink" title="8. 个性化配置"></a>8. 个性化配置</h2>
+<h2 id="6-绑定域名"><a href="#6-绑定域名" class="headerlink" title="6. 绑定域名"></a>6. 绑定域名</h2><p>在阿里云申请的域名做解析设置</p>
+<h2 id="7-发布文章"><a href="#7-发布文章" class="headerlink" title="7. 发布文章"></a>7. 发布文章</h2><h2 id="8-个性化配置"><a href="#8-个性化配置" class="headerlink" title="8. 个性化配置"></a>8. 个性化配置</h2><p>参考文章 <a href="https://blog.csdn.net/nightmare_dimple/article/details/86661502" target="_blank" rel="noopener">https://blog.csdn.net/nightmare_dimple/article/details/86661502</a></p>
+
       
     </div>
 
@@ -269,10 +289,10 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          文章目录
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          站点概览
         </li>
       </ul>
 
@@ -283,8 +303,10 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">John Doe</p>
-  <div class="site-description" itemprop="description"></div>
+    <img class="site-author-image" itemprop="image" alt="Issac Young"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Issac Young</p>
+  <div class="site-description" itemprop="description">现代生活工作节奏越来越快，需要有时间和空间沉淀积累，将知识点规划成树，记录自己的感悟心得。</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -292,7 +314,7 @@
           <a href="/archives/">
         
           <span class="site-state-item-count">1</span>
-          <span class="site-state-item-name">posts</span>
+          <span class="site-state-item-name">日志</span>
         </a>
       </div>
   </nav>
@@ -321,12 +343,12 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">Issac Young</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.7.1
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.1
   </div>
 
         
@@ -352,7 +374,7 @@
 <script src="/js/motion.js"></script>
 
 
-<script src="/js/schemes/muse.js"></script>
+<script src="/js/schemes/pisces.js"></script>
 
 
 <script src="/js/next-boot.js"></script>
@@ -382,3 +404,6 @@
 
 </body>
 </html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
