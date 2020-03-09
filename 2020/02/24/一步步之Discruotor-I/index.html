@@ -20,17 +20,21 @@
     var CONFIG = {"hostname":"issacyoung.cn","root":"/","scheme":"Pisces","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="现代生活工作节奏越来越快，需要有时间和空间沉淀积累，将知识点规划成树，记录自己的感悟心得。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Young‘s River">
-<meta property="og:url" content="http://issacyoung.cn/archives/2020/index.html">
+  <meta name="description" content="Discruptor 高性能队列Discruptor 是一个高性能的异步框架，可以理解为线程间通信的高效低延迟的内存消息队列。而这里说的消息队列，不同于类似 RocketMQ 之类的分布式队列。早期用于英国外汇交易 LMAX ，单线程系统可支撑每秒处理600万订单。目前有很多成熟的项目使用 Disruptor ，比方说 Log4j 2、Camel等。 队列的底层实现是数组、链表或者堆，而堆表示有优">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一步步之Discruotor I">
+<meta property="og:url" content="http://issacyoung.cn/2020/02/24/%E4%B8%80%E6%AD%A5%E6%AD%A5%E4%B9%8BDiscruotor-I/index.html">
 <meta property="og:site_name" content="Young‘s River">
-<meta property="og:description" content="现代生活工作节奏越来越快，需要有时间和空间沉淀积累，将知识点规划成树，记录自己的感悟心得。">
+<meta property="og:description" content="Discruptor 高性能队列Discruptor 是一个高性能的异步框架，可以理解为线程间通信的高效低延迟的内存消息队列。而这里说的消息队列，不同于类似 RocketMQ 之类的分布式队列。早期用于英国外汇交易 LMAX ，单线程系统可支撑每秒处理600万订单。目前有很多成熟的项目使用 Disruptor ，比方说 Log4j 2、Camel等。 队列的底层实现是数组、链表或者堆，而堆表示有优">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-02-24T04:03:30.000Z">
+<meta property="article:modified_time" content="2020-02-28T13:04:04.080Z">
 <meta property="article:author" content="Issac Young">
+<meta property="article:tag" content="Discruptor">
+<meta property="article:tag" content="一步步">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://issacyoung.cn/archives/2020/">
+<link rel="canonical" href="http://issacyoung.cn/2020/02/24/%E4%B8%80%E6%AD%A5%E6%AD%A5%E4%B9%8BDiscruotor-I/">
 
 
 <script id="page-configurations">
@@ -38,11 +42,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false
+    isPost: true
   };
 </script>
 
-  <title>归档 | Young‘s River</title>
+  <title>一步步之Discruotor I | Young‘s River</title>
   
 
 
@@ -152,89 +156,172 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 3 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://issacyoung.cn/2020/02/24/%E4%B8%80%E6%AD%A5%E6%AD%A5%E4%B9%8BDiscruotor-I/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/author.jpg">
+      <meta itemprop="name" content="Issac Young">
+      <meta itemprop="description" content="现代生活工作节奏越来越快，需要有时间和空间沉淀积累，将知识点规划成树，记录自己的感悟心得。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Young‘s River">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          一步步之Discruotor I
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-24 12:03:30" itemprop="dateCreated datePublished" datetime="2020-02-24T12:03:30+08:00">2020-02-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-28 21:04:04" itemprop="dateModified" datetime="2020-02-28T21:04:04+08:00">2020-02-28</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>201</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2020</h1>
+        <h1 id="Discruptor-高性能队列"><a href="#Discruptor-高性能队列" class="headerlink" title="Discruptor 高性能队列"></a>Discruptor 高性能队列</h1><p>Discruptor 是一个高性能的异步框架，可以理解为线程间通信的高效低延迟的内存消息队列。而这里说的消息队列，不同于类似 RocketMQ 之类的分布式队列。早期用于英国外汇交易 LMAX ，单线程系统可支撑每秒处理600万订单。目前有很多成熟的项目使用 Disruptor ，比方说 Log4j 2、Camel等。</p>
+<p>队列的底层实现是数组、链表或者堆，而堆表示有优先级的</p>
+<h1 id="对比-J-U-C-工具"><a href="#对比-J-U-C-工具" class="headerlink" title="对比 J.U.C 工具"></a>对比 J.U.C 工具</h1>
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
+<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-28T08:49:18+08:00"
-              content="2020-02-28">
-          02-28
-        </time>
+  
+</div>
+        <div class="reward-container">
+  <div>辛苦码字分享，您的支持将鼓励我继续创作！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.jpg" alt="Issac Young 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="Issac Young 支付宝">
+        <p>支付宝</p>
       </div>
 
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/02/28/%E4%B8%80%E6%AD%A5%E6%AD%A5%E8%AF%BBSpringBoot%E6%BA%90%E7%A0%81/" itemprop="url">
-            <span itemprop="name">一步步读SpringBoot源码</span>
-          </a>
-      </h2>
+  </div>
+</div>
 
-    </header>
-  </article>
+        
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Issac Young
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://issacyoung.cn/2020/02/24/%E4%B8%80%E6%AD%A5%E6%AD%A5%E4%B9%8BDiscruotor-I/" title="一步步之Discruotor I">http://issacyoung.cn/2020/02/24/一步步之Discruotor-I/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-24T12:03:30+08:00"
-              content="2020-02-24">
-          02-24
-        </time>
-      </div>
+        
 
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/02/24/%E4%B8%80%E6%AD%A5%E6%AD%A5%E4%B9%8BDiscruotor-I/" itemprop="url">
-            <span itemprop="name">一步步之Discruotor I</span>
-          </a>
-      </h2>
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
 
-    </header>
-  </article>
+    <div class="social-list">
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+            <div class="social-item">
+              <a target="_blank" class="social-link" href="/atom.xml">
+                <span class="icon">
+                  <i class="fa fa-rss"></i>
+                </span>
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-22T22:44:35+08:00"
-              content="2020-02-22">
-          02-22
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/02/22/%E5%A6%82%E4%BD%95%E4%B8%80%E6%AD%A5%E6%AD%A5%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/" itemprop="url">
-            <span itemprop="name">如何一步步创建个人网站</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-
+                <span class="label">RSS</span>
+              </a>
+            </div>
     </div>
   </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Discruptor/" rel="tag"><i class="fa fa-tag"></i># Discruptor</a>
+              <a href="/tags/%E4%B8%80%E6%AD%A5%E6%AD%A5/" rel="tag"><i class="fa fa-tag"></i># 一步步</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/02/22/%E5%A6%82%E4%BD%95%E4%B8%80%E6%AD%A5%E6%AD%A5%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/" rel="prev" title="如何一步步创建个人网站">
+      <i class="fa fa-chevron-left"></i> 如何一步步创建个人网站
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/02/28/%E4%B8%80%E6%AD%A5%E6%AD%A5%E8%AF%BBSpringBoot%E6%BA%90%E7%A0%81/" rel="next" title="一步步读SpringBoot源码">
+      一步步读SpringBoot源码 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
   
   
   
 
-  
-
+  </div>
 
 
           </div>
@@ -285,6 +372,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Discruptor-高性能队列"><span class="nav-number">1.</span> <span class="nav-text">Discruptor 高性能队列</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对比-J-U-C-工具"><span class="nav-number">2.</span> <span class="nav-text">对比 J.U.C 工具</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

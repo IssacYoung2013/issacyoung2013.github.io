@@ -20,29 +20,36 @@
     var CONFIG = {"hostname":"issacyoung.cn","root":"/","scheme":"Pisces","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="现代生活工作节奏越来越快，需要有时间和空间沉淀积累，将知识点规划成树，记录自己的感悟心得。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Young‘s River">
-<meta property="og:url" content="http://issacyoung.cn/index.html">
+  <meta name="description" content="SpringBoot 初识SpringBoot 是 spring 提供的一站式web快速开发部署框架，摆脱 SSM（Spring、Spring-MVC、Mybatis） 繁琐的配置流程，为微服务应运而生。目前有SpringBoot 1.X 和 2.X版本，2.X要求 Java8+，1.x java7 即可。 环境准备   工具&#x2F;框架 特点    Java8 Lambda、Stream、接口默认&amp;a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一步步读SpringBoot源码">
+<meta property="og:url" content="http://issacyoung.cn/2020/02/28/%E4%B8%80%E6%AD%A5%E6%AD%A5%E8%AF%BBSpringBoot%E6%BA%90%E7%A0%81/index.html">
 <meta property="og:site_name" content="Young‘s River">
-<meta property="og:description" content="现代生活工作节奏越来越快，需要有时间和空间沉淀积累，将知识点规划成树，记录自己的感悟心得。">
+<meta property="og:description" content="SpringBoot 初识SpringBoot 是 spring 提供的一站式web快速开发部署框架，摆脱 SSM（Spring、Spring-MVC、Mybatis） 繁琐的配置流程，为微服务应运而生。目前有SpringBoot 1.X 和 2.X版本，2.X要求 Java8+，1.x java7 即可。 环境准备   工具&#x2F;框架 特点    Java8 Lambda、Stream、接口默认&amp;a">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://q6eziv0nt.bkt.clouddn.com/spring.png">
+<meta property="og:image" content="http://q6eziv0nt.bkt.clouddn.com/spring-mvc.png">
+<meta property="article:published_time" content="2020-02-28T00:49:18.000Z">
+<meta property="article:modified_time" content="2020-03-09T00:26:24.039Z">
 <meta property="article:author" content="Issac Young">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="SpringBoot">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://q6eziv0nt.bkt.clouddn.com/spring.png">
 
-<link rel="canonical" href="http://issacyoung.cn/">
+<link rel="canonical" href="http://issacyoung.cn/2020/02/28/%E4%B8%80%E6%AD%A5%E6%AD%A5%E8%AF%BBSpringBoot%E6%BA%90%E7%A0%81/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false
+    isHome: false,
+    isPost: true
   };
 </script>
 
-  <title>Young‘s River</title>
+  <title>一步步读SpringBoot源码 | Young‘s River</title>
   
 
 
@@ -153,10 +160,10 @@
             
 
   <div class="posts-expand">
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://issacyoung.cn/2020/02/28/%E4%B8%80%E6%AD%A5%E6%AD%A5%E8%AF%BBSpringBoot%E6%BA%90%E7%A0%81/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -170,8 +177,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/28/%E4%B8%80%E6%AD%A5%E6%AD%A5%E8%AF%BBSpringBoot%E6%BA%90%E7%A0%81/" class="post-title-link" itemprop="url">一步步读SpringBoot源码</a>
+          一步步读SpringBoot源码
         </h1>
 
         <div class="post-meta">
@@ -202,7 +208,14 @@
                 </span>
             </span>
 
-          <br>
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
@@ -220,7 +233,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="SpringBoot-初识"><a href="#SpringBoot-初识" class="headerlink" title="SpringBoot 初识"></a>SpringBoot 初识</h1><p>SpringBoot 是 spring 提供的一站式web快速开发部署框架，摆脱 SSM（Spring、Spring-MVC、Mybatis） 繁琐的配置流程，为微服务应运而生。目前有SpringBoot 1.X 和 2.X版本，2.X要求 Java8+，1.x java7 即可。</p>
+        <h1 id="SpringBoot-初识"><a href="#SpringBoot-初识" class="headerlink" title="SpringBoot 初识"></a>SpringBoot 初识</h1><p>SpringBoot 是 spring 提供的一站式web快速开发部署框架，摆脱 SSM（Spring、Spring-MVC、Mybatis） 繁琐的配置流程，为微服务应运而生。目前有SpringBoot 1.X 和 2.X版本，2.X要求 Java8+，1.x java7 即可。</p>
 <h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><table>
 <thead>
 <tr>
@@ -571,7 +584,6 @@
 <li>Environment对象如何填充集合</li>
 </ul>
 
-      
     </div>
 
     
@@ -579,190 +591,96 @@
     
 <div>
   
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
 </div>
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
+
   
-  
-  
+</div>
+        <div class="reward-container">
+  <div>辛苦码字分享，您的支持将鼓励我继续创作！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.jpg" alt="Issac Young 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="Issac Young 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
 
         
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://issacyoung.cn/2020/02/24/%E4%B8%80%E6%AD%A5%E6%AD%A5%E4%B9%8BDiscruotor-I/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/author.jpg">
-      <meta itemprop="name" content="Issac Young">
-      <meta itemprop="description" content="现代生活工作节奏越来越快，需要有时间和空间沉淀积累，将知识点规划成树，记录自己的感悟心得。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Young‘s River">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/24/%E4%B8%80%E6%AD%A5%E6%AD%A5%E4%B9%8BDiscruotor-I/" class="post-title-link" itemprop="url">一步步之Discruotor I</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-02-24 12:03:30" itemprop="dateCreated datePublished" datetime="2020-02-24T12:03:30+08:00">2020-02-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-28 21:04:04" itemprop="dateModified" datetime="2020-02-28T21:04:04+08:00">2020-02-28</time>
-              </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>201</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Discruptor-高性能队列"><a href="#Discruptor-高性能队列" class="headerlink" title="Discruptor 高性能队列"></a>Discruptor 高性能队列</h1><p>Discruptor 是一个高性能的异步框架，可以理解为线程间通信的高效低延迟的内存消息队列。而这里说的消息队列，不同于类似 RocketMQ 之类的分布式队列。早期用于英国外汇交易 LMAX ，单线程系统可支撑每秒处理600万订单。目前有很多成熟的项目使用 Disruptor ，比方说 Log4j 2、Camel等。</p>
-<p>队列的底层实现是数组、链表或者堆，而堆表示有优先级的</p>
-<h1 id="对比-J-U-C-工具"><a href="#对比-J-U-C-工具" class="headerlink" title="对比 J.U.C 工具"></a>对比 J.U.C 工具</h1>
-      
-    </div>
-
-    
-    
-    
 <div>
-  
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Issac Young
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://issacyoung.cn/2020/02/28/%E4%B8%80%E6%AD%A5%E6%AD%A5%E8%AF%BBSpringBoot%E6%BA%90%E7%A0%81/" title="一步步读SpringBoot源码">http://issacyoung.cn/2020/02/28/一步步读SpringBoot源码/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
 </div>
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
         
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://issacyoung.cn/2020/02/22/%E5%A6%82%E4%BD%95%E4%B8%80%E6%AD%A5%E6%AD%A5%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/author.jpg">
-      <meta itemprop="name" content="Issac Young">
-      <meta itemprop="description" content="现代生活工作节奏越来越快，需要有时间和空间沉淀积累，将知识点规划成树，记录自己的感悟心得。">
-    </span>
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Young‘s River">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/22/%E5%A6%82%E4%BD%95%E4%B8%80%E6%AD%A5%E6%AD%A5%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/" class="post-title-link" itemprop="url">如何一步步创建个人网站</a>
-        </h1>
+    <div class="social-list">
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-02-22 22:44:35" itemprop="dateCreated datePublished" datetime="2020-02-22T22:44:35+08:00">2020-02-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+            <div class="social-item">
+              <a target="_blank" class="social-link" href="/atom.xml">
+                <span class="icon">
+                  <i class="fa fa-rss"></i>
                 </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-24 12:04:49" itemprop="dateModified" datetime="2020-02-24T12:04:49+08:00">2020-02-24</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BD%91%E7%AB%99/" itemprop="url" rel="index">
-                    <span itemprop="name">网站</span>
-                  </a>
-                </span>
-            </span>
 
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="如何一步步创建个人网站"><a href="#如何一步步创建个人网站" class="headerlink" title="如何一步步创建个人网站"></a>如何一步步创建个人网站</h1><blockquote>
-<p>早就想建一个人网站，用于知识积累、感悟心得的记录，得空利用半天周末的时间完成了这个夙愿。</p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/02/22/%E5%A6%82%E4%BD%95%E4%B8%80%E6%AD%A5%E6%AD%A5%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/#more" rel="contents">
-                阅读全文 &raquo;
+                <span class="label">RSS</span>
               </a>
             </div>
-          <!--/noindex-->
-        
-      
     </div>
+  </div>
 
-    
-    
-    
-<div>
-  
-</div>
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
+          <div class="post-tags">
+              <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i># java</a>
+              <a href="/tags/SpringBoot/" rel="tag"><i class="fa fa-tag"></i># SpringBoot</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/02/24/%E4%B8%80%E6%AD%A5%E6%AD%A5%E4%B9%8BDiscruotor-I/" rel="prev" title="一步步之Discruotor I">
+      <i class="fa fa-chevron-left"></i> 一步步之Discruotor I
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
       </footer>
+    
   </article>
   
   
   
 
   </div>
-
-  
-
 
 
           </div>
@@ -813,6 +731,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SpringBoot-初识"><span class="nav-number">1.</span> <span class="nav-text">SpringBoot 初识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境准备"><span class="nav-number">1.1.</span> <span class="nav-text">环境准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对比-SSM-框架"><span class="nav-number">1.2.</span> <span class="nav-text">对比 SSM 框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring"><span class="nav-number">1.2.1.</span> <span class="nav-text">Spring</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-MVC"><span class="nav-number">1.2.2.</span> <span class="nav-text">Spring MVC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MyBatis"><span class="nav-number">1.2.3.</span> <span class="nav-text">MyBatis</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring-Boot-启动流程"><span class="nav-number">1.3.</span> <span class="nav-text">Spring Boot 启动流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#框架初始化步骤"><span class="nav-number">1.3.1.</span> <span class="nav-text">框架初始化步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动框架"><span class="nav-number">1.3.2.</span> <span class="nav-text">启动框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动装配"><span class="nav-number">1.3.3.</span> <span class="nav-text">自动装配</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#系统初始化器"><span class="nav-number">2.</span> <span class="nav-text">系统初始化器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SpringContextInitializer介绍"><span class="nav-number">2.0.1.</span> <span class="nav-text">SpringContextInitializer介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义初始化器"><span class="nav-number">2.0.2.</span> <span class="nav-text">自定义初始化器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SpringFactioriesLoader介绍"><span class="nav-number">2.0.3.</span> <span class="nav-text">SpringFactioriesLoader介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作用"><span class="nav-number">2.0.4.</span> <span class="nav-text">作用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#监听器解析"><span class="nav-number">3.</span> <span class="nav-text">监听器解析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#监听器模式"><span class="nav-number">3.1.</span> <span class="nav-text">监听器模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringBoot监听器实现"><span class="nav-number">3.2.</span> <span class="nav-text">SpringBoot监听器实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#系统监听器介绍"><span class="nav-number">3.2.1.</span> <span class="nav-text">系统监听器介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统事件"><span class="nav-number">3.2.2.</span> <span class="nav-text">系统事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件的发送顺序"><span class="nav-number">3.2.3.</span> <span class="nav-text">事件的发送顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#监听器注册"><span class="nav-number">3.2.4.</span> <span class="nav-text">监听器注册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#触发机制"><span class="nav-number">3.2.5.</span> <span class="nav-text">触发机制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#获取监听器列表"><span class="nav-number">3.2.5.1.</span> <span class="nav-text">获取监听器列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通用触发条件"><span class="nav-number">3.2.5.2.</span> <span class="nav-text">通用触发条件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义监听器"><span class="nav-number">3.3.</span> <span class="nav-text">自定义监听器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#bean-解析"><span class="nav-number">4.</span> <span class="nav-text">bean 解析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#IoC思想"><span class="nav-number">4.1.</span> <span class="nav-text">IoC思想</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#优点"><span class="nav-number">4.1.1.</span> <span class="nav-text">优点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bean-配置方式"><span class="nav-number">4.2.</span> <span class="nav-text">bean 配置方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#xml"><span class="nav-number">4.2.1.</span> <span class="nav-text">xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注解"><span class="nav-number">4.2.2.</span> <span class="nav-text">注解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#refresh-解析"><span class="nav-number">4.3.</span> <span class="nav-text">refresh 解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">4.3.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤"><span class="nav-number">4.3.2.</span> <span class="nav-text">步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#prepareRefresh"><span class="nav-number">4.3.3.</span> <span class="nav-text">prepareRefresh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#obtainFreshBeanFactory"><span class="nav-number">4.3.4.</span> <span class="nav-text">obtainFreshBeanFactory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#prepareBeanFactory"><span class="nav-number">4.3.5.</span> <span class="nav-text">prepareBeanFactory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#invokeBeanFactoryPostProcessors"><span class="nav-number">4.3.6.</span> <span class="nav-text">invokeBeanFactoryPostProcessors</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#registerBeanPostProcessors"><span class="nav-number">4.3.7.</span> <span class="nav-text">registerBeanPostProcessors</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#registerListeners"><span class="nav-number">4.3.8.</span> <span class="nav-text">registerListeners</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#finishBeanFactoryInitialization"><span class="nav-number">4.3.9.</span> <span class="nav-text">finishBeanFactoryInitialization</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#finishRefresh"><span class="nav-number">4.3.10.</span> <span class="nav-text">finishRefresh</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bean-实例化解析"><span class="nav-number">4.4.</span> <span class="nav-text">Bean 实例化解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#BeanDefinition-介绍"><span class="nav-number">4.4.1.</span> <span class="nav-text">BeanDefinition 介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义实例化-Bean"><span class="nav-number">4.4.2.</span> <span class="nav-text">自定义实例化 Bean</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例流程"><span class="nav-number">4.4.3.</span> <span class="nav-text">实例流程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Banner-解析"><span class="nav-number">5.</span> <span class="nav-text">Banner 解析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#演示"><span class="nav-number">5.1.</span> <span class="nav-text">演示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#默认-banner"><span class="nav-number">5.1.1.</span> <span class="nav-text">默认 banner</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文字-banner"><span class="nav-number">5.1.2.</span> <span class="nav-text">文字 banner</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片-banner"><span class="nav-number">5.1.3.</span> <span class="nav-text">图片 banner</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#兜底-banner"><span class="nav-number">5.1.4.</span> <span class="nav-text">兜底 banner</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关闭-banner"><span class="nav-number">5.1.5.</span> <span class="nav-text">关闭 banner</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#banner-获取原理"><span class="nav-number">5.2.</span> <span class="nav-text">banner 获取原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#banner-输出原理"><span class="nav-number">5.3.</span> <span class="nav-text">banner 输出原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#默认输出"><span class="nav-number">5.3.1.</span> <span class="nav-text">默认输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文字输出"><span class="nav-number">5.3.2.</span> <span class="nav-text">文字输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片输出"><span class="nav-number">5.3.3.</span> <span class="nav-text">图片输出</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#启动加载器解析"><span class="nav-number">6.</span> <span class="nav-text">启动加载器解析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#计时器介绍"><span class="nav-number">6.1.</span> <span class="nav-text">计时器介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用步骤"><span class="nav-number">6.1.1.</span> <span class="nav-text">使用步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码优点"><span class="nav-number">6.1.2.</span> <span class="nav-text">代码优点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">6.2.</span> <span class="nav-text">实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方式一"><span class="nav-number">6.2.1.</span> <span class="nav-text">方式一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方式二"><span class="nav-number">6.2.2.</span> <span class="nav-text">方式二</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#排序规则"><span class="nav-number">6.2.3.</span> <span class="nav-text">排序规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不同点"><span class="nav-number">6.2.4.</span> <span class="nav-text">不同点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原理"><span class="nav-number">6.3.</span> <span class="nav-text">原理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#属性配置解析"><span class="nav-number">7.</span> <span class="nav-text">属性配置解析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#介绍"><span class="nav-number">7.1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring-Aware"><span class="nav-number">7.2.</span> <span class="nav-text">Spring Aware</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用-Aware"><span class="nav-number">7.2.1.</span> <span class="nav-text">常用 Aware</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Aware-调用"><span class="nav-number">7.2.2.</span> <span class="nav-text">Aware 调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义实现-Aware"><span class="nav-number">7.2.3.</span> <span class="nav-text">自定义实现 Aware</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Envrionment-解析"><span class="nav-number">7.3.</span> <span class="nav-text">Envrionment 解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#获取属性"><span class="nav-number">7.3.1.</span> <span class="nav-text">获取属性</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
