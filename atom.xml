@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://issacyoung.cn/"/>
-  <updated>2020-03-26T01:05:14.597Z</updated>
+  <updated>2021-03-04T15:06:51.426Z</updated>
   <id>http://issacyoung.cn/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>学习计划</title>
+    <link href="http://issacyoung.cn/2021/03/04/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/"/>
+    <id>http://issacyoung.cn/2021/03/04/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/</id>
+    <published>2021-03-04T14:55:14.000Z</published>
+    <updated>2021-03-04T15:06:51.426Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="学习计划"><a href="#学习计划" class="headerlink" title="学习计划"></a>学习计划</h1><blockquote><p>又将之前的个人网站捡了回来，作为自己持续学习的一个记录。年逾30，愈发地觉得无计划地学习，已不似年轻时脑子好用，等过了三五天时常不记得学的内容。有计划的学习，一来压力不会太大，再者记录在案方便回溯。</p></blockquote><h2 id="Java高级应用"><a href="#Java高级应用" class="headerlink" title="Java高级应用"></a>Java高级应用</h2><blockquote><p>怎么理解这个高级应用？个人总结而言，凡是去重抽象的操作都可以理解为高级应用。集合、池化技术、动态代理、进程通信等等</p></blockquote><ul><li>并发</li><li>io</li></ul><h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><h2 id="分布式系统中间件"><a href="#分布式系统中间件" class="headerlink" title="分布式系统中间件"></a>分布式系统中间件</h2><blockquote><p>这个是面试的高频点，也是作为一个合格的架构师所必须熟悉的。如何才能熟稔于心，必然是需要在日常工作中反复练习、应用，触类旁通。</p></blockquote><ul><li><p>注册中心</p><ul><li>eureka</li><li>nacos</li><li>zookeeper</li></ul></li><li><p>服务间通信</p><ul><li>feign</li><li>dubbo</li></ul></li><li><p>消息中间件</p><ul><li>RocketMq</li><li>Kafka</li></ul></li><li><p>缓存中间件</p><ul><li>Redis</li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;学习计划&quot;&gt;&lt;a href=&quot;#学习计划&quot; class=&quot;headerlink&quot; title=&quot;学习计划&quot;&gt;&lt;/a&gt;学习计划&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;又将之前的个人网站捡了回来，作为自己持续学习的一个记录。年逾30，愈发地觉得无计划地学习，已不似年
+      
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://issacyoung.cn/categories/java/"/>
+    
+    
+      <category term="java" scheme="http://issacyoung.cn/tags/java/"/>
+    
+  </entry>
   
   <entry>
     <title>一步步读SpringBoot源码</title>
